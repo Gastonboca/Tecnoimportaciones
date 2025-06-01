@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tecno Importaciones</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .producto {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .galeria {
+      display: flex;
+      overflow-x: auto;
+    }
+
+    .galeria img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.1);
+    }
+
+    .contenido {
+      padding: 15px;
+    }
+
+    .contenido h3 {
+      margin: 0 0 10px;
+    }
+
+    .precio {
+      color: #27ae60;
+      font-weight: bold;
+    }
+
+    .contacto {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .btn {
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .correo {
+      display: block;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    /* Lightbox */
+    #lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    #lightbox button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 40px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    #lightbox .prev {
+      left: 20px;
+    }
+
+    #lightbox .next {
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Somos Tecno importaciones. Importadores directos ubicados en La Plata. Contamos con local físico y hacemos envíos a todo el país.</h1>
+  <img src="https://img.freepik.com/foto-gratis/vista-frontal-tienda-electronica-modernos-dispositivos-digitales_23-2149370529.jpg" alt="Portada">
+</header>
+
+<section class="productos">
+
+  <!-- Producto 1 -->
+  <div class="producto">
+    <div class="galeria">
+      <img src="https://i.postimg.cc/DZM0XfqJ/IMG-20250529-WA0041.jpg" alt="Redmi 1" onclick="abrirLightbox(this)">
+      <img src="https://i.postimg.cc/DZM0XfqJ/IMG-20250529-WA0041.jpg" alt="Redmi 2" onclick="abrirLightbox(this)">
+    </div>
+    <div class="contenido">
+      <h3>Celular Redmi 14C</h3>
+      <p>128 GB de rom, 8 GB de ram. Dispositivo desbloqueado para que elijas tu compañía telefónica preferida. Memoria interna de 128 GB. Procesador Mediatek Helio G81 Ultra. Cámara Frontal 13 MP. Dual SIM.</p>
+      <p class="precio">$Consultar</p>
+    </div>
+  </div>
+
+  <!-- Producto 2 -->
+  <div class="producto">
+    <div class="galeria">
+      <img src="https://i.postimg.cc/5Nqhj75L/IMG-20250529-WA0043.jpg" alt="Redmi 1" onclick="abrirLightbox(this)">
+      <img src="https://i.postimg.cc/5Nqhj75L/IMG-20250529-WA0043.jpg" alt="Redmi 2" onclick="abrirLightbox(this)">
+    </div>
+    <div class="contenido">
+      <h3>Celular Redmi A3X</h3>
+      <p>Memoria RAM: 3 GB. Dispositivo liberado para que elijas la compañía telefónica que prefieras. Memoria interna de 64 GB.</p>
+      <p class="precio">$Consultar</p>
+    </div>
+  </div>
+
+  <!-- Producto 3 -->
+  <div class="producto">
+    <div class="galeria">
+      <img src="https://i.postimg.cc/N0Tv4sq2/IMG-20250529-WA0035.jpg" alt="Moto G51" onclick="abrirLightbox(this)">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_652446-MLA52330173376_112022-O.webp" alt="Moto G51 2" onclick="abrirLightbox(this)">
+    </div>
+    <div class="contenido">
+      <h3>Celular Moto G51</h3>
+      <p>Pantalla 6.8", procesador Snapdragon 480+, RAM 8GB, batería 5000 mAh, triple cámara 50+8+2 MP. Android 11.</p>
+      <p class="precio">$Consultar</p>
+    </div>
+  </div>
+
+  <!-- Producto 4 -->
+  <div class="producto">
+    <div class="galeria">
+      <img src="https://i.postimg.cc/RF9yLwL2/IMG-20250529-WA0037.jpg" alt="Moto E14" onclick="abrirLightbox(this)">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_958197-MLA48529911613_122021-O.webp" alt="Moto E14 2" onclick="abrirLightbox(this)">
+    </div>
+    <div class="contenido">
+      <h3>Celular Moto E14</h3>
+      <p>Procesador Octa-core, 64GB de almacenamiento, batería 5000 mAh, Android 14, pantalla IPS, cámara 13 MP.</p>
+      <p class="precio">$Consultar</p>
+    </div>
+  </div>
+
+  <!-- Producto 5 -->
+  <div class="producto">
+    <div class="galeria">
+      <img src="https://i.postimg.cc/9XytjvVP/IMG-20250529-WA0034.jpg" alt="Play 5" onclick="abrirLightbox(this)">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_958197-MLA48529911613_122021-O.webp" alt="Play 5 2" onclick="abrirLightbox(this)">
+    </div>
+    <div class="contenido">
+      <h3>Play 5</h3>
+      <p>Varios modelos, consultar stock disponible.</p>
+      <p class="precio">$Consultar</p>
+    </div>
+  </div>
+
+  <!-- Producto 6 -->
+  <div class="producto">
+    <div class="galeria">
+      <img src="https://i.postimg.cc/SRKyVBG0/IMG-20250529-WA0039.jpg" alt="Vaper" onclick="abrirLightbox(this)">
+      <img src="https://i.postimg.cc/sgW3n952/IMG-20250529-WA0032.jpg" alt="Vaper 2" onclick="abrirLightbox(this)">
+    </div>
+    <div class="contenido">
+      <h3>Vaper varios modelos</h3>
+      <p>Lost Angel Pro Max 20.000 puffs. 16 ml, 5% nicotina, batería recargable, puerto USB-C. Consultar disponibilidad.</p>
+      <p class="precio">$Consultar</p>
+    </div>
+  </div>
+
+  <!-- Producto 7 -->
+  <div class="producto">
+    <div class="galeria">
+      <img src="https://i.postimg.cc/QdQR96pc/IMG-20250529-WA0047.jpg" alt="Monopatín" onclick="abrirLightbox(this)">
+      <img src="https://i.postimg.cc/QdQR96pc/IMG-20250529-WA0047.jpg" alt="Monopatín 2" onclick="abrirLightbox(this)">
+    </div>
+    <div class="contenido">
+      <h3>Monopatín eléctrico</h3>
+      <p>Bluetooth, resistente al agua, sonido potente.</p>
+      <p class="precio">$Consultar</p>
+    </div>
+  </div>
+
+  <!-- Producto 8 -->
+  <div class="producto">
+    <div class="galeria">
+      <img src="https://i.postimg.cc/3xfbDPk4/IMG-20250529-WA0030.jpg" alt="Consulta" onclick="abrirLightbox(this)">
+      <img src="https://i.postimg.cc/3xfbDPk4/IMG-20250529-WA0030.jpg" alt="Consulta 2" onclick="abrirLightbox(this)">
+    </div>
+    <div class="contenido">
+      <h3>Lista de precios</h3>
+      <p>Puedes consultar por cualquier producto que no esté en el catálogo.</p>
+      <p class="precio">$Consultar</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- Contacto -->
+<section class="contacto">
+  <a class="btn" href="https://wa.me/5491138608612" target="_blank">📲 Consultar por WhatsApp</a>
+  <span class="correo">📧 gaston_00@hotmail.es</span>
+</section>
+
+<!-- Lightbox con navegación -->
+<div id="lightbox" onclick="cerrarLightbox()">
+  <button class="prev" onclick="anteriorImagen(event)">⟨</button>
+  <img id="lightbox-img" src="">
+  <button class="next" onclick="siguienteImagen(event)">⟩</button>
+</div>
+
+<script>
+  let imagenesActuales = [];
+  let indiceActual = 0;
+
+  function abrirLightbox(imgElement) {
+    const galeria = imgElement.closest('.galeria');
+    imagenesActuales = Array.from(galeria.querySelectorAll('img')).map(img => img.src);
+    indiceActual = imagenesActuales.indexOf(imgElement.src);
+    document.getElementById("lightbox-img").src = imgElement.src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function cerrarLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+
+  function siguienteImagen(e) {
+    e.stopPropagation();
+    indiceActual = (indiceActual + 1) % imagenesActuales.length;
+    document.getElementById("lightbox-img").src = imagenesActuales[indiceActual];
+  }
+
+  function anteriorImagen(e) {
+    e.stopPropagation();
+    indiceActual = (indiceActual - 1 + imagenesActuales.length) % imagenesActuales.length;
+    document.getElementById("lightbox-img").src = imagenesActuales[indiceActual];
+  }
+</script>
+
+</body>
+</html>
